@@ -40,7 +40,7 @@ function CreateLargeDiamonds(){
             shade: 'dark',
             start: [0, 16]
         },{
-            shade: 'light',
+            shade: 'gray',
             start: [32, 16]
         },{
             shade: 'dark',

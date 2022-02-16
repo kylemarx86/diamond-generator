@@ -38,5 +38,17 @@ div {
 .row .pixel.light.step_1 {
   background-color: lime;
 }
+.row .pixel.gray.step_4 {
+  background-color: #242424;
+}
+.row .pixel.gray.step_3 {
+  background-color: #343434;
+}
+.row .pixel.gray.step_2 {
+  background-color: #444444;
+}
+.row .pixel.gray.step_1 {
+  background-color: #545454;
+}
 
 /*# sourceMappingURL=style.css.map */
