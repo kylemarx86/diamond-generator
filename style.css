@@ -1,0 +1,42 @@
+body {
+  display: inline-block;
+}
+
+div {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: #800015;
+}
+
+.row div {
+  width: 1px;
+  height: 2px;
+  float: left;
+}
+.row .pixel.dark.step_4 {
+  background-color: #940019;
+}
+.row .pixel.dark.step_3 {
+  background-color: #a8001c;
+}
+.row .pixel.dark.step_2 {
+  background-color: #bd001f;
+}
+.row .pixel.dark.step_1 {
+  background-color: #d10023;
+}
+.row .pixel.light.step_4 {
+  background-color: #9f001b;
+}
+.row .pixel.light.step_3 {
+  background-color: #bf0020;
+}
+.row .pixel.light.step_2 {
+  background-color: #df0025;
+}
+.row .pixel.light.step_1 {
+  background-color: #ff002b;
+}
+
+/*# sourceMappingURL=style.css.map */
