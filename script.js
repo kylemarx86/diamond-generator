@@ -2,10 +2,6 @@ $(document).ready(function(){
     GenerateDivArray(64, 64);
     
     CreateLargeDiamonds();
-    // AddClasses(2,2);
-    //generate dynamic diamonds
-    // GenerateDiamonds();
-    // AddClasses();
 });
 
 //create an array of divs with elements that contain their row and column position
@@ -15,27 +11,14 @@ function GenerateDivArray(rows, columns){
         $row = $('<div>').addClass(`row row_${i}`);
         for(var j = 0; j < columns; j++){
             $div = $('<div>').addClass(`pixel pixel_${j}_${i}`);
-            // $div.append($row);
             $row.append($div);
         }
         $('.container').append($row);
-        // $row.append('.container');
     }
 }
 
 //add classes to divs to denote their color dependent on their
 function CreateLargeDiamonds(){
-    // var startArray = [
-    //     {
-    //         shade: 'dark',
-    //         start: [16, 0]
-    //     },{
-    //         shade: 'light',
-    //         start: [32, 16]
-    //     }
-    // ];
-
-
     // should switch the start and shade position to be consistent with other methods
     var startArray = [
         {
@@ -120,20 +103,17 @@ function CreateSmallDiamonds(headerDiamondLocation, shade){
 
 // draw center of small diamond
 function CreateLayer1(center, shade){
-    // var colorClass = 'green';
     var colorClass = 'step_1';
     AddClassToDiv(center[0], center[1], shade, colorClass);
 }
 // draw 2nd layer of diamond (layer just outside of diamond)
 function CreateLayer2(center, shade){
-    // math
     var addArray = [
         [0,-1],
         [1,0],
         [0,1],
         [-1,0]
     ]
-    // var colorClass = 'orange';
     var colorClass = 'step_2';
     addArray.forEach(element => {
         AddClassToDiv(center[0] + element[0], center[1] + element[1], shade, colorClass);
@@ -141,7 +121,6 @@ function CreateLayer2(center, shade){
 }
 
 function CreateLayer3(center, shade){
-    // math
     var addArray = [
         [0,-2],
         [1,-1],
@@ -152,7 +131,6 @@ function CreateLayer3(center, shade){
         [-2,0],
         [-1,-1]
     ]
-    // var colorClass = 'red';
     var colorClass = 'step_3';
     addArray.forEach(element => {
         AddClassToDiv(center[0] + element[0], center[1] + element[1], shade, colorClass);
@@ -160,7 +138,6 @@ function CreateLayer3(center, shade){
 }
 
 function CreateLayer4(center, shade){
-    // math
     var addArray = [
         [0,-3],
         [1,-2],
@@ -175,13 +152,11 @@ function CreateLayer4(center, shade){
         [-2,-1],
         [-1,-2]
     ]
-    // var colorClass = 'black';
     var colorClass = 'step_4';
     addArray.forEach(element => {
         AddClassToDiv(center[0] + element[0], center[1] + element[1], shade, colorClass);
     });
 }
-
 
 
 function AddClassToDiv(row, column, shade, colorClass){
