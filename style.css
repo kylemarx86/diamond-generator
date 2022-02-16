@@ -6,7 +6,7 @@ div {
   padding: 0;
   margin: 0;
   border: 0;
-  background-color: #800015;
+  background-color: green;
 }
 
 .row div {
@@ -15,28 +15,28 @@ div {
   float: left;
 }
 .row .pixel.dark.step_4 {
-  background-color: #940019;
+  background-color: #009400;
 }
 .row .pixel.dark.step_3 {
-  background-color: #a8001c;
+  background-color: #00a800;
 }
 .row .pixel.dark.step_2 {
-  background-color: #bd001f;
+  background-color: #00bd00;
 }
 .row .pixel.dark.step_1 {
-  background-color: #d10023;
+  background-color: #00d100;
 }
 .row .pixel.light.step_4 {
-  background-color: #9f001b;
+  background-color: #009f00;
 }
 .row .pixel.light.step_3 {
-  background-color: #bf0020;
+  background-color: #00bf00;
 }
 .row .pixel.light.step_2 {
-  background-color: #df0025;
+  background-color: #00df00;
 }
 .row .pixel.light.step_1 {
-  background-color: #ff002b;
+  background-color: lime;
 }
 
 /*# sourceMappingURL=style.css.map */
