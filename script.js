@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    GenerateDivArray(64, 128);
+    GenerateDivArray(128, 128);
     
     CreateLargeDiamonds();
 });
@@ -23,19 +23,19 @@ function CreateLargeDiamonds(){
     var startArray = [
         // row 1 of large diamonds
         {
-            shade: 'dark',
+            shade: 'gray',
             start: [0, -16]
         },{
-            shade: 'gray',
+            shade: 'dark',
             start: [32, -16]
         },{
-            shade: 'dark',
+            shade: 'light',
             start: [64, -16]
         },{
-            shade: 'gray',
+            shade: 'dark',
             start: [96, -16]
         },{
-            shade: 'dark',
+            shade: 'gray',
             start: [128, -16]
         },
         // row 2 of large diamonds
@@ -54,19 +54,19 @@ function CreateLargeDiamonds(){
         },
         // row 3 of large diamonds
         {
-            shade: 'gray',
+            shade: 'dark',
             start: [0, 16]
         },{
-            shade: 'dark',
+            shade: 'gray',
             start: [32, 16]
         },{
-            shade: 'light',
+            shade: 'dark',
             start: [64, 16]
         },{
-            shade: 'dark',
+            shade: 'gray',
             start: [96, 16]
         },{
-            shade: 'gray',
+            shade: 'dark',
             start: [128, 16]
         },
         // row 4 of large diamonds
@@ -85,20 +85,82 @@ function CreateLargeDiamonds(){
         },
         // row 5 of large diamonds
         {
-            shade: 'dark',
+            shade: 'light',
             start: [0, 48]
         },{
-            shade: 'gray',
+            shade: 'dark',
             start: [32, 48]
         },{
-            shade: 'dark',
+            shade: 'gray',
             start: [64, 48]
         },{
-            shade: 'gray',
+            shade: 'dark',
             start: [96, 48]
         },{
-            shade: 'dark',
+            shade: 'light',
             start: [128, 48]
+        },
+        // row 6 of large diamonds  -  left off here
+        {
+            shade: 'dark',
+            start: [16, 64]
+        },{
+            shade: 'dark',
+            start: [48, 64]
+        },{
+            shade: 'dark',
+            start: [80, 64]
+        },{
+            shade: 'dark',
+            start: [112, 64]
+        },
+        // row 7 of large diamonds
+        {
+            shade: 'dark',
+            start: [0, 80]
+        },{
+            shade: 'gray',
+            start: [32, 80]
+        },{
+            shade: 'dark',
+            start: [64, 80]
+        },{
+            shade: 'gray',
+            start: [96, 80]
+        },{
+            shade: 'dark',
+            start: [128, 80]
+        },
+        // row 8 of large diamonds
+        {
+            shade: 'dark',
+            start: [16, 96]
+        },{
+            shade: 'dark',
+            start: [48, 96]
+        },{
+            shade: 'dark',
+            start: [80, 96]
+        },{
+            shade: 'dark',
+            start: [112, 96]
+        },
+        // row 9 of large diamonds
+        {
+            shade: 'gray',
+            start: [0, 112]
+        },{
+            shade: 'dark',
+            start: [32, 112]
+        },{
+            shade: 'light',
+            start: [64, 112]
+        },{
+            shade: 'dark',
+            start: [96, 112]
+        },{
+            shade: 'gray',
+            start: [128, 112]
         }
     ];
     
