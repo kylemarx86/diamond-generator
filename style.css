@@ -27,16 +27,16 @@ div {
   background-color: #333333;
 }
 .row .pixel.light.step_4 {
-  background-color: #9f0050;
+  background-color: #9f0000;
 }
 .row .pixel.light.step_3 {
-  background-color: #bf0060;
+  background-color: #bf0000;
 }
 .row .pixel.light.step_2 {
-  background-color: #df0070;
+  background-color: #df0000;
 }
 .row .pixel.light.step_1 {
-  background-color: #ff0080;
+  background-color: red;
 }
 .row .pixel.gray.step_4 {
   background-color: #242424;
