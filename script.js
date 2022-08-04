@@ -20,6 +20,18 @@ function GenerateDivArray(rows, columns){
 //add classes to divs to denote their color dependent on their
 function CreateLargeDiamonds(){
     // should switch the start and shade position to be consistent with other methods
+
+    var tempArray = ['gray', 'dark', 'light', 'dark', 'gray',   //row 1
+        'dark', 'dark', 'dark', 'dark',             
+        'dark', 'gray', 'dark', 'gray', 'dark',     //row 3
+        'dark', 'dark', 'dark', 'dark', 
+        'light', 'dark', 'gray', 'dark', 'light',   //row 5
+        'dark', 'dark', 'dark', 'dark', 
+        'dark', 'gray', 'dark', 'gray', 'dark',     //row 7
+        'dark', 'dark', 'dark', 'dark', 
+        'gray', 'dark', 'light', 'dark', 'gray'     //row 9
+    ];
+
     var startArray = [
         // row 1 of large diamonds
         {
