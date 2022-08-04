@@ -25,37 +25,37 @@ function CreateLargeDiamonds(){
             shade: 'light',
             start: [0, -16]
         },{
-            shade: 'dark',
+            shade: 'black',
             start: [32, -16]
         },{
             shade: 'light',
             start: [64, -16]
         },{
-            shade: 'dark',
+            shade: 'black',
             start: [16, 0]
         },{
-            shade: 'dark',
+            shade: 'black',
             start: [48, 0]
         },{
-            shade: 'dark',
+            shade: 'black',
             start: [0, 16]
         },{
-            shade: 'gray',
+            shade: 'dark',
             start: [32, 16]
         },{
-            shade: 'dark',
+            shade: 'black',
             start: [64, 16]
         },{
-            shade: 'dark',
+            shade: 'black',
             start: [16, 32]
         },{
-            shade: 'dark',
+            shade: 'black',
             start: [48, 32]
         },{
             shade: 'light',
             start: [0, 48]
         },{
-            shade: 'dark',
+            shade: 'black',
             start: [32, 48]
         },{
             shade: 'light',
