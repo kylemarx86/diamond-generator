@@ -6,7 +6,7 @@ div {
   padding: 0;
   margin: 0;
   border: 0;
-  background-color: #800015;
+  background-color: black;
 }
 
 .row div {
@@ -15,28 +15,40 @@ div {
   float: left;
 }
 .row .pixel.dark.step_4 {
-  background-color: #940019;
+  background-color: #0d0d0d;
 }
 .row .pixel.dark.step_3 {
-  background-color: #a8001c;
+  background-color: #1a1a1a;
 }
 .row .pixel.dark.step_2 {
-  background-color: #bd001f;
+  background-color: #262626;
 }
 .row .pixel.dark.step_1 {
-  background-color: #d10023;
+  background-color: #333333;
 }
 .row .pixel.light.step_4 {
-  background-color: #9f001b;
+  background-color: #009f00;
 }
 .row .pixel.light.step_3 {
-  background-color: #bf0020;
+  background-color: #00bf00;
 }
 .row .pixel.light.step_2 {
-  background-color: #df0025;
+  background-color: #00df00;
 }
 .row .pixel.light.step_1 {
-  background-color: #ff002b;
+  background-color: lime;
+}
+.row .pixel.gray.step_4 {
+  background-color: #242424;
+}
+.row .pixel.gray.step_3 {
+  background-color: #343434;
+}
+.row .pixel.gray.step_2 {
+  background-color: #444444;
+}
+.row .pixel.gray.step_1 {
+  background-color: #545454;
 }
 
 /*# sourceMappingURL=style.css.map */

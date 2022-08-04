@@ -5,13 +5,26 @@ $divWidth: 1px;
 $divHeight: $divWidth * 2;
 
 //color variables
-$baseColorHue: 350;
+$baseColorHue: 120;
 $baseColorSaturation: 100%;
 $baseColorLightness: 25%;
 $baseColor: hsl($baseColorHue, $baseColorSaturation, $baseColorLightness);
+
+$darkBaseColorHue: 360;
+$darkBaseColorSaturation: 0%;
+$darkBaseColorLightness: 0%;
+$darkBaseColor: hsl($darkBaseColorHue, $darkBaseColorSaturation, $darkBaseColorLightness);
+
+$grayBaseColorHue: 0;
+$grayBaseColorSaturation: 0%;
+$grayBaseColorLightness: 8%;
+$grayBaseColor: hsl($grayBaseColorHue, $grayBaseColorSaturation, $grayBaseColorLightness);
+
 $colorSteps: 4;
-$lightnessDifferenceDark: 16%;
+$lightnessDifferenceDark: 20%;
 $lightnessDifferenceLight: 25%;
+$lightnessDifferenceGray: 25%;
+
 // $lightnessDifferenceDark: 30%;
 // $lightnessDifferenceLight: 50%;
 
@@ -23,7 +36,7 @@ div{
     padding: 0;
     margin: 0;
     border: 0;
-    background-color: $baseColor;
+    background-color: $darkBaseColor;
 }
  
 .row {
@@ -36,16 +49,16 @@ div{
     .pixel{
         &.dark{
             &.step_4{
-                background-color: hsl($baseColorHue, $baseColorSaturation * 1, $baseColorLightness + math.div($lightnessDifferenceDark, $colorSteps) * 1);
+                background-color: hsl($darkBaseColorHue, $darkBaseColorSaturation * 1, $darkBaseColorLightness + math.div($lightnessDifferenceDark, $colorSteps) * 1);
             }
             &.step_3{
-                background-color: hsl($baseColorHue, $baseColorSaturation * 1, $baseColorLightness + math.div($lightnessDifferenceDark, $colorSteps) * 2);
+                background-color: hsl($darkBaseColorHue, $darkBaseColorSaturation * 1, $darkBaseColorLightness + math.div($lightnessDifferenceDark, $colorSteps) * 2);
             }
             &.step_2{
-                background-color: hsl($baseColorHue, $baseColorSaturation * 1, $baseColorLightness + math.div($lightnessDifferenceDark, $colorSteps) * 3);
+                background-color: hsl($darkBaseColorHue, $darkBaseColorSaturation * 1, $darkBaseColorLightness + math.div($lightnessDifferenceDark, $colorSteps) * 3);
             }
             &.step_1{
-                background-color: hsl($baseColorHue, $baseColorSaturation * 1, $baseColorLightness + math.div($lightnessDifferenceDark, $colorSteps) * 4);
+                background-color: hsl($darkBaseColorHue, $darkBaseColorSaturation * 1, $darkBaseColorLightness + math.div($lightnessDifferenceDark, $colorSteps) * 4);
             }
         }
 
@@ -61,6 +74,21 @@ div{
             }
             &.step_1{
                 background-color: hsl($baseColorHue, $baseColorSaturation * 1, $baseColorLightness + math.div($lightnessDifferenceLight, $colorSteps) * 4);
+            }
+        }
+
+        &.gray{
+            &.step_4{
+                background-color: hsl($grayBaseColorHue, $grayBaseColorSaturation * 1, $grayBaseColorLightness + math.div($lightnessDifferenceGray, $colorSteps) * 1);
+            }
+            &.step_3{
+                background-color: hsl($grayBaseColorHue, $grayBaseColorSaturation * 1, $grayBaseColorLightness + math.div($lightnessDifferenceGray, $colorSteps) * 2);
+            }
+            &.step_2{
+                background-color: hsl($grayBaseColorHue, $grayBaseColorSaturation * 1, $grayBaseColorLightness + math.div($lightnessDifferenceGray, $colorSteps) * 3);
+            }
+            &.step_1{
+                background-color: hsl($grayBaseColorHue, $grayBaseColorSaturation * 1, $grayBaseColorLightness + math.div($lightnessDifferenceGray, $colorSteps) * 4);
             }
         }
     }

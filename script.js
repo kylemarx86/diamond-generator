@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    GenerateDivArray(64, 64);
+    GenerateDivArray(128, 128);
     
     CreateLargeDiamonds();
 });
@@ -20,9 +20,22 @@ function GenerateDivArray(rows, columns){
 //add classes to divs to denote their color dependent on their
 function CreateLargeDiamonds(){
     // should switch the start and shade position to be consistent with other methods
+
+    var tempArray = ['gray', 'dark', 'light', 'dark', 'gray',   //row 1
+        'dark', 'dark', 'dark', 'dark',             
+        'dark', 'gray', 'dark', 'gray', 'dark',     //row 3
+        'dark', 'dark', 'dark', 'dark', 
+        'light', 'dark', 'gray', 'dark', 'light',   //row 5
+        'dark', 'dark', 'dark', 'dark', 
+        'dark', 'gray', 'dark', 'gray', 'dark',     //row 7
+        'dark', 'dark', 'dark', 'dark', 
+        'gray', 'dark', 'light', 'dark', 'gray'     //row 9
+    ];
+
     var startArray = [
+        // row 1 of large diamonds
         {
-            shade: 'light',
+            shade: 'gray',
             start: [0, -16]
         },{
             shade: 'dark',
@@ -32,34 +45,134 @@ function CreateLargeDiamonds(){
             start: [64, -16]
         },{
             shade: 'dark',
+            start: [96, -16]
+        },{
+            shade: 'gray',
+            start: [128, -16]
+        },
+        // row 2 of large diamonds
+        {
+            shade: 'dark',
             start: [16, 0]
         },{
             shade: 'dark',
             start: [48, 0]
         },{
             shade: 'dark',
+            start: [80, 0]
+        },{
+            shade: 'dark',
+            start: [112, 0]
+        },
+        // row 3 of large diamonds
+        {
+            shade: 'dark',
             start: [0, 16]
         },{
-            shade: 'light',
+            shade: 'gray',
             start: [32, 16]
         },{
             shade: 'dark',
             start: [64, 16]
         },{
+            shade: 'gray',
+            start: [96, 16]
+        },{
+            shade: 'dark',
+            start: [128, 16]
+        },
+        // row 4 of large diamonds
+        {
             shade: 'dark',
             start: [16, 32]
         },{
             shade: 'dark',
             start: [48, 32]
         },{
+            shade: 'dark',
+            start: [80, 32]
+        },{
+            shade: 'dark',
+            start: [112, 32]
+        },
+        // row 5 of large diamonds
+        {
             shade: 'light',
             start: [0, 48]
         },{
             shade: 'dark',
             start: [32, 48]
         },{
-            shade: 'light',
+            shade: 'gray',
             start: [64, 48]
+        },{
+            shade: 'dark',
+            start: [96, 48]
+        },{
+            shade: 'light',
+            start: [128, 48]
+        },
+        // row 6 of large diamonds  -  left off here
+        {
+            shade: 'dark',
+            start: [16, 64]
+        },{
+            shade: 'dark',
+            start: [48, 64]
+        },{
+            shade: 'dark',
+            start: [80, 64]
+        },{
+            shade: 'dark',
+            start: [112, 64]
+        },
+        // row 7 of large diamonds
+        {
+            shade: 'dark',
+            start: [0, 80]
+        },{
+            shade: 'gray',
+            start: [32, 80]
+        },{
+            shade: 'dark',
+            start: [64, 80]
+        },{
+            shade: 'gray',
+            start: [96, 80]
+        },{
+            shade: 'dark',
+            start: [128, 80]
+        },
+        // row 8 of large diamonds
+        {
+            shade: 'dark',
+            start: [16, 96]
+        },{
+            shade: 'dark',
+            start: [48, 96]
+        },{
+            shade: 'dark',
+            start: [80, 96]
+        },{
+            shade: 'dark',
+            start: [112, 96]
+        },
+        // row 9 of large diamonds
+        {
+            shade: 'gray',
+            start: [0, 112]
+        },{
+            shade: 'dark',
+            start: [32, 112]
+        },{
+            shade: 'light',
+            start: [64, 112]
+        },{
+            shade: 'dark',
+            start: [96, 112]
+        },{
+            shade: 'gray',
+            start: [128, 112]
         }
     ];
     
