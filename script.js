@@ -23,15 +23,15 @@ function CreateLargeDiamonds(){
 
     // sample color array for 5 x 5 array of diamonds
     var diamondColorArray = [
-        'gray', 'dark', 'light', 'dark', 'gray',   //row 1
-        'dark', 'dark', 'dark', 'dark',             
-        'dark', 'gray', 'dark', 'gray', 'dark',     //row 3
-        'dark', 'dark', 'dark', 'dark', 
-        'light', 'dark', 'gray', 'dark', 'light',   //row 5
-        'dark', 'dark', 'dark', 'dark', 
-        'dark', 'gray', 'dark', 'gray', 'dark',     //row 7
-        'dark', 'dark', 'dark', 'dark', 
-        'gray', 'dark', 'light', 'dark', 'gray'     //row 9
+        'dark', 'black', 'light', 'black', 'dark',   //row 1
+        'black', 'black', 'black', 'black',             
+        'black', 'dark', 'black', 'dark', 'black',     //row 3
+        'black', 'black', 'black', 'black', 
+        'light', 'black', 'dark', 'black', 'light',   //row 5
+        'black', 'black', 'black', 'black', 
+        'black', 'dark', 'black', 'dark', 'black',     //row 7
+        'black', 'black', 'black', 'black', 
+        'dark', 'black', 'light', 'black', 'dark'     //row 9
     ];
 
     // headers for 5 x 5 array of diamonds
