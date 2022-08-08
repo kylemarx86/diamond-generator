@@ -1,3 +1,56 @@
+// pattern arrays
+var diamondPatternArrays = {
+    // pattern 07
+    '07': {
+        'patternSize': '3x3',
+        'colorArray': [
+            'light', 'black', 'light',      //row 1
+            'black', 'black',
+            'black', 'dark', 'black',      //row 3
+            'black', 'black',
+            'light', 'black', 'light'      //row 5
+        ]
+    },
+    // pattern 08
+    '08': {'patternSize': '5x5',
+    'colorArray': [
+        'dark', 'black', 'light', 'black', 'dark',   //row 1
+        'black', 'black', 'black', 'black',             
+        'black', 'dark', 'black', 'dark', 'black',     //row 3
+        'black', 'black', 'black', 'black', 
+        'light', 'black', 'dark', 'black', 'light',   //row 5
+        'black', 'black', 'black', 'black', 
+        'black', 'dark', 'black', 'dark', 'black',     //row 7
+        'black', 'black', 'black', 'black', 
+        'dark', 'black', 'light', 'black', 'dark'     //row 9
+    ]}
+};
+
+var diamondHeaderArrays = {
+    '3x3': [
+        [0, -16], [32, -16], [64, -16],     //row 1
+        [16, 0], [48, 0], 
+        [0, 16], [32, 16], [64, 16],        //row 3
+        [16, 32], [48, 32],
+        [0, 48], [32, 48], [64, 48]         //row 5
+    ],
+    '5x5': [
+        [0, -16], [32, -16], [64, -16], [96, -16], [128, -16],  //row 1
+        [16, 0], [48, 0], [80, 0], [112, 0],
+        [0, 16], [32, 16], [64, 16], [96, 16], [128, 16],       //row 3
+        [16, 32], [48, 32], [80, 32], [112, 32],
+        [0, 48], [32, 48], [64, 48], [96, 48], [128, 48],       //row 5
+        [16, 64], [48, 64], [80, 64], [112, 64],
+        [0, 80], [32, 80], [64, 80], [96, 80], [128, 80],       //row 7
+        [16, 96], [48, 96], [80, 96], [112, 96],
+        [0, 112], [32, 112], [64, 112], [96, 112], [128, 112]   //row 9
+    ]
+};
+
+// start of creation
+// uncertain if the values 128, 128 are needed to be made dynamic based on the pattern
+// will definitely need to adjust the static 128, 128 part to dynamically change the sized 
+    // per the pattern size
 $(document).ready(function(){
     GenerateDivArray(128, 128);
     
@@ -17,38 +70,28 @@ function GenerateDivArray(rows, columns){
     }
 }
 
+
+
 //add classes to divs to denote their color dependent on their
 function CreateLargeDiamonds(){
     // should switch the start and shade position to be consistent with other methods
 
     // sample color array for 5 x 5 array of diamonds
-    var diamondColorArray = [
-        'dark', 'black', 'light', 'black', 'dark',   //row 1
-        'black', 'black', 'black', 'black',             
-        'black', 'dark', 'black', 'dark', 'black',     //row 3
-        'black', 'black', 'black', 'black', 
-        'light', 'black', 'dark', 'black', 'light',   //row 5
-        'black', 'black', 'black', 'black', 
-        'black', 'dark', 'black', 'dark', 'black',     //row 7
-        'black', 'black', 'black', 'black', 
-        'dark', 'black', 'light', 'black', 'dark'     //row 9
-    ];
-
+    var diamondPattern = diamondPatternArrays['07'];
+    var diamondColorArray = diamondPattern['colorArray'];
+    // var diamondColorArray = diamondPatternArrays.find('08');
+    
+         
     // headers for 5 x 5 array of diamonds
-    var diamondHeaderArray = [
-        [0, -16], [32, -16], [64, -16], [96, -16], [128, -16],  //row 1
-        [16, 0], [48, 0], [80, 0], [112, 0],
-        [0, 16], [32, 16], [64, 16], [96, 16], [128, 16],       //row 3
-        [16, 32], [48, 32], [80, 32], [112, 32],
-        [0, 48], [32, 48], [64, 48], [96, 48], [128, 48],       //row 5
-        [16, 64], [48, 64], [80, 64], [112, 64],
-        [0, 80], [32, 80], [64, 80], [96, 80], [128, 80],       //row 7
-        [16, 96], [48, 96], [80, 96], [112, 96],
-        [0, 112], [32, 112], [64, 112], [96, 112], [128, 112]   //row 9
-    ];
+    var patternSize = diamondPattern['patternSize'];
+    var diamondHeaderArray = diamondHeaderArrays[patternSize];
+
+    console.log('diamondPattern', diamondPattern);
+    console.log('diamondColorArray', diamondColorArray);
+    console.log('diamondHeaderArray', diamondHeaderArray);
 
     var diamondStartArray = CreateLargeDiamondArray(diamondColorArray, diamondHeaderArray);
-  
+      
     diamondStartArray.forEach(element => {
         CreateSmallDiamonds(element['start'], element['shade']);
     });
