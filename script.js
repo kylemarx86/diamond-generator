@@ -71,27 +71,22 @@ function GenerateDivArray(rows, columns){
 }
 
 
-
 //add classes to divs to denote their color dependent on their
 function CreateLargeDiamonds(){
-    // should switch the start and shade position to be consistent with other methods
-
-    // sample color array for 5 x 5 array of diamonds
+    // declare which pattern is being used
+        // idea bing this portion up to prior to GenerateDivArray implementation to
+            // limit number of divs created and to limit size of drawing more effectively
     var diamondPattern = diamondPatternArrays['07'];
+    // gather info on the color pattern chosen
     var diamondColorArray = diamondPattern['colorArray'];
-    // var diamondColorArray = diamondPatternArrays.find('08');
-    
-         
-    // headers for 5 x 5 array of diamonds
+    // create pattern sizes and gather info on starting positions of large diamonds
     var patternSize = diamondPattern['patternSize'];
     var diamondHeaderArray = diamondHeaderArrays[patternSize];
 
-    console.log('diamondPattern', diamondPattern);
-    console.log('diamondColorArray', diamondColorArray);
-    console.log('diamondHeaderArray', diamondHeaderArray);
-
+    // compile array of large diamonds color pattern and starting header locations
     var diamondStartArray = CreateLargeDiamondArray(diamondColorArray, diamondHeaderArray);
       
+    // create the small diamonds within each large diamond
     diamondStartArray.forEach(element => {
         CreateSmallDiamonds(element['start'], element['shade']);
     });
