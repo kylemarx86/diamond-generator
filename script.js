@@ -1,9 +1,47 @@
 // pattern arrays
 var diamondPatternArrays = {
     // pattern 01
+    '01': {
+        'patternSize': '3x3',
+        'colorArray': [
+            'light', 'dark', 'light',      //row 1
+            'dark', 'dark',
+            'dark', 'light', 'dark',      //row 3
+            'dark', 'dark',
+            'light', 'dark', 'light'      //row 5
+        ]
+    },
     // pattern 02
+    '02': {
+        'patternSize': '3x3',
+        'colorArray': [
+            'light', 'black', 'light',      //row 1
+            'black', 'black',
+            'black', 'light', 'black',      //row 3
+            'black', 'black',
+            'light', 'black', 'light'      //row 5
+        ]
+    },
     // pattern 03
+    '03': {
+        'patternSize': '3x3',
+        'colorArray': [
+            'light', 'black', 'light',      //row 1
+            'black', 'black',
+            'black', 'gray', 'black',      //row 3
+            'black', 'black',
+            'light', 'black', 'light'      //row 5
+        ]
+    },
     // pattern 04
+    '04': {'patternSize': '5x3',
+    'colorArray': [
+        'black', 'gray', 'black', 'gray', 'black',  //row 1
+        'black', 'black', 'black', 'black',             
+        'gray', 'black', 'light', 'black', 'gray',  //row 3
+        'black', 'black', 'black', 'black',          
+        'black', 'gray', 'black', 'gray', 'black'   //row 5
+    ]},
     // pattern 05
     // pattern 06
     
@@ -51,6 +89,13 @@ var diamondHeaderArrays = {
         [0, 80], [32, 80], [64, 80], [96, 80], [128, 80],       //row 7
         [16, 96], [48, 96], [80, 96], [112, 96],
         [0, 112], [32, 112], [64, 112], [96, 112], [128, 112]   //row 9
+    ],
+    '5x3': [
+        [0, -16], [32, -16], [64, -16], [96, -16], [128, -16],  //row 1
+        [16, 0], [48, 0], [80, 0], [112, 0],
+        [0, 16], [32, 16], [64, 16], [96, 16], [128, 16],       //row 3
+        [16, 32], [48, 32], [80, 32], [112, 32],
+        [0, 48], [32, 48], [64, 48], [96, 48], [128, 48]       //row 5
     ]
 };
 
@@ -63,13 +108,15 @@ var diamondHeaderArrays = {
  * Contains variable which changes the pattern
  */
 $(document).ready(function(){
-    var patternNumber = '08';
+    var patternNumber = '04';
 
     var diamondPattern = diamondPatternArrays[patternNumber];
 
     var divArraySize = DetermineDivArraySize(diamondPattern['patternSize']);
     // need to declare pattern and determine array size 
-    GenerateDivArray(divArraySize.width, divArraySize.height);
+    // recall: number of rows in array is determined by height and
+        // number of columns in array is determined by width
+    GenerateDivArray(divArraySize.height, divArraySize.width);
     
     CreateLargeDiamonds(diamondPattern);
 });
@@ -85,13 +132,18 @@ function DetermineDivArraySize(patternSize){
         height: null
     }
 
+    // varify these are correct. 
     if(patternSize == '3x3'){
         divArraySize.width = 64;
         divArraySize.height = 64;
         return divArraySize;
-    }else if(patternSize = '5x5'){
+    }else if(patternSize == '5x5'){
         divArraySize.width = 128;
         divArraySize.height = 128;
+        return divArraySize;
+    }else if(patternSize == '5x3'){
+        divArraySize.width = 128;   //determines number of columns
+        divArraySize.height = 64;   //determines number of rows
         return divArraySize;
     }else{
         return divArraySize;
