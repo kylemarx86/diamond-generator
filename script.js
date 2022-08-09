@@ -1,5 +1,12 @@
 // pattern arrays
 var diamondPatternArrays = {
+    // pattern 01
+    // pattern 02
+    // pattern 03
+    // pattern 04
+    // pattern 05
+    // pattern 06
+    
     // pattern 07
     '07': {
         'patternSize': '3x3',
@@ -51,14 +58,51 @@ var diamondHeaderArrays = {
 // uncertain if the values 128, 128 are needed to be made dynamic based on the pattern
 // will definitely need to adjust the static 128, 128 part to dynamically change the sized 
     // per the pattern size
+/**
+ * Main running funciton.
+ * Contains variable which changes the pattern
+ */
 $(document).ready(function(){
-    GenerateDivArray(128, 128);
+    var patternNumber = '08';
+
+    var diamondPattern = diamondPatternArrays[patternNumber];
+
+    var divArraySize = DetermineDivArraySize(diamondPattern['patternSize']);
+    // need to declare pattern and determine array size 
+    GenerateDivArray(divArraySize.width, divArraySize.height);
     
-    CreateLargeDiamonds();
+    CreateLargeDiamonds(diamondPattern);
 });
 
-//create an array of divs with elements that contain their row and column position
-// will list the 
+/**
+ * 
+ * @param {*} patternSize 
+ * @returns 
+ */
+function DetermineDivArraySize(patternSize){
+    var divArraySize = {
+        width: null,
+        height: null
+    }
+
+    if(patternSize == '3x3'){
+        divArraySize.width = 64;
+        divArraySize.height = 64;
+        return divArraySize;
+    }else if(patternSize = '5x5'){
+        divArraySize.width = 128;
+        divArraySize.height = 128;
+        return divArraySize;
+    }else{
+        return divArraySize;
+    }
+}
+
+/**
+ * Create an array of divs with elements that contain their row and column position 
+ * @param {*} rows 
+ * @param {*} columns 
+ */
 function GenerateDivArray(rows, columns){
     for(var i = 0; i < rows; i++){
         $row = $('<div>').addClass(`row row_${i}`);
@@ -71,12 +115,12 @@ function GenerateDivArray(rows, columns){
 }
 
 
-//add classes to divs to denote their color dependent on their
-function CreateLargeDiamonds(){
-    // declare which pattern is being used
-        // idea bing this portion up to prior to GenerateDivArray implementation to
-            // limit number of divs created and to limit size of drawing more effectively
-    var diamondPattern = diamondPatternArrays['07'];
+
+/**
+ * 
+ * @param {*} diamondPattern 
+ */
+function CreateLargeDiamonds(diamondPattern){
     // gather info on the color pattern chosen
     var diamondColorArray = diamondPattern['colorArray'];
     // create pattern sizes and gather info on starting positions of large diamonds
@@ -117,29 +161,24 @@ function CreateLargeDiamondArray(colorArray, headerArray){
     return diamondStartArray;
 }
 
+/**
+ * Creates an array of small diamonds
+ * @param {*} headerDiamondLocation 
+ * @param {*} shade 
+ */
 function CreateSmallDiamonds(headerDiamondLocation, shade){
     var addArray = [
         [0, 0],
-        [-4, 4],
-        [4, 4],
-        [-8, 8],
-        [0, 8],
-        [8, 8],
-        [-12, 12],
-        [-4, 12],
-        [4, 12],
-        [12, 12],
-        [-8, 16],
-        [0, 16],
-        [8, 16],
-        [-4, 20],
-        [4, 20],
+        [-4, 4], [4, 4],
+        [-8, 8], [0, 8], [8, 8],
+        [-12, 12], [-4, 12], [4, 12], [12, 12],
+        [-8, 16], [0, 16], [8, 16],
+        [-4, 20], [4, 20],
         [0, 24]
     ]
 
     addArray.forEach(element => {
-        
-        // AddClasses(element['color']);
+        // create 4 layers of the inner diamonds based around the center and given shade that will change
         var center = [headerDiamondLocation[0] + element[0], headerDiamondLocation[1] + element[1] + 3];
         CreateLayer1(center, shade);
         CreateLayer2(center, shade);
@@ -148,15 +187,24 @@ function CreateSmallDiamonds(headerDiamondLocation, shade){
     });
 }
 
-
-// draw center of small diamond
+/**
+ * Draws center of small diamond
+ * @param {*} center 
+ * @param {*} shade 
+ */
 function CreateLayer1(center, shade){
     var colorClass = 'step_1';
     AddClassToDiv(center[0], center[1], shade, colorClass);
 }
-// draw 2nd layer of diamond (layer just outside of diamond)
+
+/**
+ * Draw 2nd layer of diamond (layer just outside center of diamond)
+ * @param {*} center 
+ * @param {*} shade 
+ */
 function CreateLayer2(center, shade){
     var addArray = [
+        // add array are points that move clockwise in the pattern starting from the top
         [0,-1],
         [1,0],
         [0,1],
@@ -168,7 +216,13 @@ function CreateLayer2(center, shade){
     });
 }
 
+/**
+ * Draw 3rd layer of diamond (layer just outside of 2nd layer)
+ * @param {*} center 
+ * @param {*} shade 
+ */
 function CreateLayer3(center, shade){
+    // add array are points that move clockwise in the pattern starting from the top
     var addArray = [
         [0,-2],
         [1,-1],
@@ -185,7 +239,13 @@ function CreateLayer3(center, shade){
     });
 }
 
+/**
+ * Draw 4th layer of diamond (layer just outside of 3rd layer)
+ * @param {*} center 
+ * @param {*} shade 
+ */
 function CreateLayer4(center, shade){
+    // add array are points that move clockwise in the pattern starting from the top
     var addArray = [
         [0,-3],
         [1,-2],
@@ -206,7 +266,13 @@ function CreateLayer4(center, shade){
     });
 }
 
-
+/**
+ * Pinpoints div by identifying it by row and column in the divArray. Adds shade and color class to that specified div.
+ * @param {*} row 
+ * @param {*} column 
+ * @param {*} shade 
+ * @param {*} colorClass 
+ */
 function AddClassToDiv(row, column, shade, colorClass){
     $(`.pixel_${row}_${column}`).addClass(`${shade} ${colorClass}`);
 }
